@@ -1,0 +1,144 @@
+@keyframes animation {
+  0% {
+    --a: 0deg;
+  }
+
+  100% {
+    --a: 360deg;
+  }
+}
+
+@property --a {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* ============================================= */
+
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #242424;
+  color: #fff;
+}
+
+/* ========================================= */
+
+.Box {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  /* border: 1px solid red; */
+}
+
+/* ============================================= */
+
+.Button-Frame {
+  position: relative;
+
+  user-select: none;
+  cursor: pointer;
+
+  margin-bottom: 50px;
+
+  width: 200px;
+  height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: repeating-conic-gradient(
+    from var(--a),
+    #ff2770 0%,
+    #ff2770 19%,
+    #242424 5%,
+    #242424 40%,
+    #ff2770 50%
+  );
+
+  /* background: linear-gradient(to left, #fff, #242424, #242424, #fff); */
+
+  --a: 70deg;
+
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.Button-Frame:hover {
+  background: repeating-conic-gradient(
+    from var(--a),
+    #ff9800 0%,
+    #ff9800 19%,
+    transparent 5%,
+    transparent 40%,
+    #ff9800 50%
+  );
+
+  /* background: linear-gradient(to left, #ff9800, #242424, #242424, #ff9800); */
+}
+
+.Button {
+  width: 190px;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+
+  /* background: linear-gradient(to left, #ff2770, #242424, #242424, #ff2770); */
+  background: #242424;
+
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+/* ========================================= */
+
+.Avatar-Frame {
+  position: relative;
+
+  width: 100px;
+  height: 100px;
+
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ff9800;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.Avatar-Frame:active {
+  background: greenyellow;
+}
+
+.Avatar {
+  width: 90px;
+  height: 90px;
+
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+/* ========================================= */
+/* animation: animation 4s linear infinite; */
+
+/* ========================================= */
