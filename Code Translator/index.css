@@ -1,0 +1,39 @@
+* {
+  margin: 0%;
+  padding: 0%;
+
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: sandybrown;
+}
+
+/* ==================================== */
+
+.Box {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* border: 1px solid red; */
+}
+
+#Text-Box {
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+
+/* ==================================== */
+
+/* ==================================== */
