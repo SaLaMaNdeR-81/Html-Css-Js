@@ -1,0 +1,73 @@
+@keyframes spin {
+  to {
+    transform: rotate(3turn);
+    left: 50px;
+  }
+}
+
+@keyframes Rotate {
+  0% {
+    transform: rotate(0turn);
+    filter: drop-shadow(inset 2px 5px #b799ff);
+  }
+  50% {
+    filter: drop-shadow(0px 1px 6px #b799ff);
+  }
+  100% {
+    transform: rotate(3turn);
+    filter: drop-shadow(inset 4px 7px #b799ff);
+    animation: spin 5s infinite linear;
+  }
+}
+
+/* ================================ */
+
+* {
+  margin: 0%;
+  padding: 0%;
+
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #242424;
+}
+
+/* ============== */
+
+img {
+  pointer-events: none;
+}
+
+/* ================================ */
+
+.Box {
+  position: absolute;
+  overflow: hidden;
+
+  inset: 0px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.MusicDisc {
+  position: relative;
+  user-select: none;
+
+  width: 25vw;
+  height: 25vw;
+
+  animation: Rotate 1s infinite alternate;
+
+  transition: 1s;
+  filter: drop-shadow(0px 2px 5px #b799ff);
+  /* === */
+}
