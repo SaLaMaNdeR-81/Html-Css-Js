@@ -4,7 +4,7 @@
 > **MiniProjects**
 
 - [1- 3d Card Module](#)
-- [2- Simple Slider](#)
+- [2- Simple Slider](https://github.com/SaLaMaNdeR-81/Html-Css-Js/tree/main/2-%20Simple%20Slider)
 
 ---
 
