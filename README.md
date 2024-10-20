@@ -3,7 +3,8 @@
 
 > **MiniProjects**
 
-- [1- Simple Slider](https://github.com/SaLaMaNdeR)
+- [1- 3d Card Module](#)
+- [2- Simple Slider](#)
 
 ---
 
