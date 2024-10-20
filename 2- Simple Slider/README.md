@@ -1,6 +1,6 @@
 ---
 
-> ## **Simple Slider**
+## **Simple Slider**
 
 ---
 
