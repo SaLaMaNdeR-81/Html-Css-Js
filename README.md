@@ -3,6 +3,8 @@
 
 > **MiniProjects**
 
+- [1- Simple Slider](https://github.com/SaLaMaNdeR)
+
 ---
 
 ## 📌 All Of Mini Projects in Here Made By 
