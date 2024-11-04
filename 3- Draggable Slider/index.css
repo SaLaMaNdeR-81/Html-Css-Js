@@ -1,0 +1,116 @@
+* {
+  margin: 0%;
+  padding: 0%;
+
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  background: #15151d;
+  background-size: 64px 64px;
+  background-image: linear-gradient(to right , #00000026 1px , transparent 2px),linear-gradient(to bottom , #00000026 1px , transparent 2px);
+  color: #fff;
+  
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+
+}
+
+
+/* ======================================= */
+
+.Slider{
+  position: relative;
+  overflow: hidden;
+  width: 80vw;
+  height: 400px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px #fff;
+  /* border: 1px solid red; */
+}
+
+#Action{
+  position: absolute;
+  user-select: none;
+  cursor: pointer;
+  z-index: 100;
+
+  width: 70px;
+  height: 100%;
+
+  font-size: 40px;
+  font-weight: 700;
+  color: #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+#Action::before{
+  content: '';
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+}
+
+#Action.Next{
+  right: 0px;
+}
+#Action.Next::before{
+  background: linear-gradient(to  left,#fff 3px,transparent);
+}
+#Action.Perv{
+  left: 0px;
+}
+#Action.Perv::before{
+  background: linear-gradient(to  right,#fff 3px,transparent);
+}
+
+#ItemBox{
+  position: absolute;
+  overflow: hidden;
+  /* scroll-behavior: unset; */
+  /* overflow-x: auto; */
+  padding-left: 50px;
+  padding-right: 50px;
+  inset: 0;
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* display: none; */
+
+}
+
+.Card{
+  position: relative;
+  user-select: none;
+  overflow: hidden;
+  min-width: 300px;
+  height: 90%;
+  margin: 10px;
+  border-radius: 5px;
+}
+.Card:active{
+  transform: scale(0.9);
+}
+
+.Card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
