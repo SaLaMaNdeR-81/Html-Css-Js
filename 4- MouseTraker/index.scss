@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #15131d;
+  background-size: 64px 64px;
+  background-image: linear-gradient(to right, #00000099 1px, transparent 2px),
+    linear-gradient(to bottom, #00000099 1px, transparent 2px);
+  color: #eee;
+}
+
+// =================================
+
+#Box {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  //   border: 1px solid red;
+}
+
+.Element {
+  position: relative;
+  user-select: none;
+  margin: 20px;
+
+  &:active {
+    transform: translateY(5px);
+  }
+  &:hover {
+    opacity: 0.81;
+  }
+}
+
+// =================================
+
+$Traker-Size: 5px;
+$Traker-Color: #eeeeeecf;
+
+#Traker {
+  position: absolute;
+
+  width: $Traker-Size;
+  height: $Traker-Size;
+
+  background: $Traker-Color;
+
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+
+  div {
+    position: absolute;
+    inset: -15px;
+    border-radius: 100%;
+    transition: 200ms;
+    border: 1px solid $Traker-Color;
+  }
+
+  &[Active] div {
+    background: radial-gradient(circle, $Traker-Color 2px, transparent);
+    opacity: 0.3;
+    inset: -35px;
+    transform: scale(1.3);
+    border: unset;
+    // tra
+  }
+
+  //   ===
+}
+
+// =================================
+
+@media screen and (max-width: 1050px) {
+  #Traker {
+    display: none;
+  }
+}
