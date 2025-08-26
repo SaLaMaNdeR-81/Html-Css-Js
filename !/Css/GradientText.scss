@@ -1,0 +1,22 @@
+@keyframes Animation {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.Title {
+  user-select: none;
+  position: absolute;
+  left: 20px;
+  font-size: 30px;
+  font-family: fantasy;
+  background: linear-gradient(270deg, seagreen, #00b7ff, seagreen);
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: Animation 7s ease infinite;
+}
