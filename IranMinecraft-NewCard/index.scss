@@ -1,0 +1,226 @@
+@import "./Styles/Rotating-Gradient-bg.scss";
+@import "./Styles/Font.Style.scss";
+
+@keyframes Animation {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: "Roboto", "IranYekan", sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  color: #fff;
+  background: #15151d;
+  background-size: 64px 64px;
+  background-image: linear-gradient(to right, #8b000090 1px, transparent 2px),
+    linear-gradient(to bottom, #8b000090 1px, transparent 2px);
+}
+
+// ==========================
+
+.Box {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //   border: 1px solid red;
+}
+
+.Card {
+  position: absolute;
+  user-select: none;
+  width: 300px;
+  height: 500px;
+
+  border-radius: 5px;
+  //   border: 1px solid salmon;
+
+  .Overlay {
+    position: absolute;
+    inset: -5px;
+    border-radius: 5px;
+    @include Rotating-Gradient-bg(
+      $color1: (
+        darkred,
+        white,
+        // green,
+      ),
+      $color2: green,
+      //   $color2: #9333ea,
+      $stop1: null,
+      $stop2: null,
+      $duration: 80s
+    );
+    // background: linear-gradient(darkred, white, green);
+  }
+  .Main {
+    position: absolute;
+    inset: 0;
+    background: #15151d;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  //   ===
+}
+
+.Main {
+  .Card-Title {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 5px double darkgoldenrod;
+
+    h1 {
+      user-select: none;
+      position: absolute;
+      font-size: 30px;
+      font-family: minecraft;
+      background: linear-gradient(270deg, green, white, red);
+      //   background-size: 800% 800%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      //   animation: Animation 7s ease infinite;
+    }
+
+    .Card-Type {
+      user-select: none;
+      position: absolute;
+      background: #15151d;
+      bottom: -25px;
+      letter-spacing: 4px;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      b {
+        font-size: 20px;
+        font-family: ElectroHarmonix;
+        background: linear-gradient(270deg, darkorange, white);
+        // background: linear-gradient(90deg, aqua, white);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    // ===
+  }
+
+  .thumbnail {
+    $thumbnail-Size: 64px;
+    position: absolute;
+    cursor: pointer;
+    top: 100px;
+    right: 20px;
+    width: $thumbnail-Size;
+    height: $thumbnail-Size;
+    border-radius: 5px;
+    border: 1px solid red;
+    transition: 2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .Main {
+      box-shadow: inset 0px 1px 10px #ffffff40;
+    }
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .Card-Name {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    width: 60%;
+    padding: 10px;
+    font-family: minecraft;
+    font-size: 20px;
+    // color: gold;
+    color: orchid;
+    // border: 1px solid red;
+  }
+
+  .Card-Price {
+    position: absolute;
+    top: 160px;
+    left: 40px;
+    b {
+      font-size: 17px;
+      color: gray;
+      text-decoration: line-through;
+    }
+    i {
+      position: absolute;
+      top: -20px;
+      left: -10px;
+      font-weight: 600;
+      font-size: 17px;
+      color: red;
+    }
+  }
+
+  p.Card-Description {
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 10px;
+    position: absolute;
+    top: 190px;
+    width: 90%;
+    height: 200px;
+    direction: rtl;
+    color: gray;
+    font-size: 15px;
+    // border: 1px solid red;
+    border-top: 1px solid red;
+  }
+
+  .Card-Action {
+    position: absolute;
+    bottom: 40px;
+    width: 60%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border-bottom: 5px double green;
+  }
+
+  .Card-DisCountTimer {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    direction: rtl;
+    color: brown;
+  }
+
+  // ===
+}

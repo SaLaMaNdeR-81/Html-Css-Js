@@ -1,0 +1,48 @@
+// ===============================
+// Rotating Gradient Background SCSS Module
+// ===============================
+
+// Make angle animatable (CSS custom property)
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+// Default variables
+$rot-bg-color1: #1ef017 !default;
+$rot-bg-color2: #9333ea !default;
+$rot-bg-stop1: 70% !default;
+$rot-bg-stop2: 30% !default;
+$rot-bg-duration: 3s !default;
+
+// Mixin for Reusability
+@mixin Rotating-Gradient-bg(
+  $color1: $rot-bg-color1,
+  $color2: $rot-bg-color2,
+  $stop1: $rot-bg-stop1,
+  $stop2: $rot-bg-stop2,
+  $duration: $rot-bg-duration
+) {
+  --angle: 0deg;
+  background: linear-gradient(var(--angle), $color1 $stop1, $color2 $stop2);
+  animation: rotate-gradient $duration linear infinite;
+}
+
+// Animation keyframes
+@keyframes rotate-gradient {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+// Example usage
+// @import "./**/Rotating-Gradient-bg.scss";
+// .animated-bg {
+//   @include Rotating-Gradient-bg();
+//   @include Rotating-Gradient-bg(#1ef017, #9333ea, 70%, 30%, 5s);
+//   @include Rotating-Gradient-bg($duration:5s);
+// }

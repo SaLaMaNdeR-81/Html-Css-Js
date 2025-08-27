@@ -1,0 +1,228 @@
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes rotate-gradient {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+@font-face {
+  font-family: "IranYekan";
+  src: url("../Font/Yekan.ttf") format("truetype");
+}
+@font-face {
+  font-family: minecraft;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Minecraft"), url("../Font/MinecraftTen-VGORe.woff") format("woff");
+}
+@font-face {
+  font-family: BungeeSpice;
+  src: url("../Font/BungeeSpice-Regular.ttf");
+}
+@font-face {
+  font-family: MedievalSharp;
+  src: url("../Font/MedievalSharp-Regular.ttf");
+}
+@font-face {
+  font-family: ElectroHarmonix;
+  src: url("../Font/electroharmonix.otf");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../Font/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../Font/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@keyframes Animation {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: "Roboto", "IranYekan", sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  color: #fff;
+  background: #15151d;
+  background-size: 64px 64px;
+  background-image: linear-gradient(to right, #8b000090 1px, transparent 2px), linear-gradient(to bottom, #8b000090 1px, transparent 2px);
+}
+
+.Box {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Card {
+  position: absolute;
+  user-select: none;
+  width: 300px;
+  height: 500px;
+  border-radius: 5px;
+}
+.Card .Overlay {
+  position: absolute;
+  inset: -5px;
+  border-radius: 5px;
+  --angle: 0deg;
+  background: linear-gradient(var(--angle), darkred, white, green);
+  animation: rotate-gradient 80s linear infinite;
+}
+.Card .Main {
+  position: absolute;
+  inset: 0;
+  background: #15151d;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Main .Card-Title {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 5px double darkgoldenrod;
+}
+.Main .Card-Title h1 {
+  user-select: none;
+  position: absolute;
+  font-size: 30px;
+  font-family: minecraft;
+  background: linear-gradient(270deg, green, white, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.Main .Card-Title .Card-Type {
+  user-select: none;
+  position: absolute;
+  background: #15151d;
+  bottom: -25px;
+  letter-spacing: 4px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Main .Card-Title .Card-Type b {
+  font-size: 20px;
+  font-family: ElectroHarmonix;
+  background: linear-gradient(270deg, darkorange, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.Main .thumbnail {
+  position: absolute;
+  cursor: pointer;
+  top: 100px;
+  right: 20px;
+  width: 64px;
+  height: 64px;
+  border-radius: 5px;
+  border: 1px solid red;
+  transition: 2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Main .thumbnail .Main {
+  box-shadow: inset 0px 1px 10px #ffffff40;
+}
+.Main .thumbnail img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.Main .Card-Name {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  width: 60%;
+  padding: 10px;
+  font-family: minecraft;
+  font-size: 20px;
+  color: orchid;
+}
+.Main .Card-Price {
+  position: absolute;
+  top: 160px;
+  left: 40px;
+}
+.Main .Card-Price b {
+  font-size: 17px;
+  color: gray;
+  text-decoration: line-through;
+}
+.Main .Card-Price i {
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  font-weight: 600;
+  font-size: 17px;
+  color: red;
+}
+.Main p.Card-Description {
+  overflow: hidden;
+  overflow-y: auto;
+  padding: 10px;
+  position: absolute;
+  top: 190px;
+  width: 90%;
+  height: 200px;
+  direction: rtl;
+  color: gray;
+  font-size: 15px;
+  border-top: 1px solid red;
+}
+.Main .Card-Action {
+  position: absolute;
+  bottom: 40px;
+  width: 60%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  border-bottom: 5px double green;
+}
+.Main .Card-DisCountTimer {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  direction: rtl;
+  color: brown;
+}
