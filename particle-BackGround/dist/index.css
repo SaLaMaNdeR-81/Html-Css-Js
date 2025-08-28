@@ -1,0 +1,101 @@
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes rotate-gradient {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+@font-face {
+  font-family: "IranYekan";
+  src: url("../Font/Yekan.ttf") format("truetype");
+}
+@font-face {
+  font-family: minecraft;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Minecraft"), url("../Font/MinecraftTen-VGORe.woff") format("woff");
+}
+@font-face {
+  font-family: BungeeSpice;
+  src: url("../Font/BungeeSpice-Regular.ttf");
+}
+@font-face {
+  font-family: MedievalSharp;
+  src: url("../Font/MedievalSharp-Regular.ttf");
+}
+@font-face {
+  font-family: ElectroHarmonix;
+  src: url("../Font/electroharmonix.otf");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../Font/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../Font/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@keyframes Animation {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: "Roboto", "IranYekan", sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  color: #fff;
+  color: #fff;
+  background: #15151d;
+  background-size: 64px 64px;
+  background-image: linear-gradient(to right, #00640090 1px, transparent 2px), linear-gradient(to bottom, #00640090 1px, transparent 2px);
+}
+
+.Box {
+  position: relative;
+  inset: 0;
+  height: 2000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes driftY {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-200px);
+  }
+}
+.Particle {
+  position: absolute;
+  inset: 0;
+  border: 1px solid red;
+}

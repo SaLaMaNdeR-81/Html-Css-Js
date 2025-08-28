@@ -1,0 +1,58 @@
+// .hero {
+//   position: relative;
+//   min-height: 100vh;
+//   background: #0b0f2b;
+//   color: white;
+//   display: grid;
+//   place-items: center;
+//   overflow: hidden;
+
+//   h1 {
+//     font-size: 2rem;
+//     margin-bottom: 0.5rem;
+//   }
+//   p {
+//     opacity: 0.8;
+//   }
+// }
+
+#Particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  span {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: url("." + "./img/Hallow.png") no-repeat center/contain;
+    opacity: 0.7;
+    //   animation: float 10s ease-in-out infinite;
+
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i}) {
+        // top: random(100) * 1%;
+        // left: random(100) * 1%;
+        animation-delay: random(10) * 1s;
+        transform: scale(#{0.5 + random(10) / 10});
+      }
+    }
+
+    // ===
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-15px) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+}

@@ -1,0 +1,83 @@
+@import "./Styles/Rotating-Gradient-bg.scss";
+@import "./Styles/Font.Style.scss";
+
+$Primery-Background: #15151d;
+$Color: #fff;
+
+@function brightness($color) {
+  @return ((red($color) * 299) + (green($color) * 587) + (blue($color) * 114)) /
+    1000;
+}
+
+@function auto-text-color($bg) {
+  @if (brightness($bg) > 128) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+@keyframes Animation {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: "Roboto", "IranYekan", sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  color: $Color;
+  color: auto-text-color($Primery-Background);
+  background: $Primery-Background;
+  background-size: 64px 64px;
+  background-image: linear-gradient(to right, #00640090 1px, transparent 2px),
+    linear-gradient(to bottom, #00640090 1px, transparent 2px);
+}
+
+// ==========================
+
+.Box {
+  position: relative;
+  inset: 0;
+  height: 2000px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //   border: 1px solid red;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes driftY {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-200px);
+  }
+}
+
+.Particle {
+  position: absolute;
+  inset: 0;
+  border: 1px solid red;
+}
+
+// ==========================
